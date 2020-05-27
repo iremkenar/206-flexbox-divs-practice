@@ -103,39 +103,65 @@ html {
 }
 
 body {
+  display: flex;
+  justify-content: center;
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 700;
-  padding: 2em;
+  padding: 0em 2em;
   color: #fff;
-  height: 100%;
 }
 
-.wrapper {
+.flex-container {
   /*add display:flex and set justify-content to space-between*/
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: center;
+  max-width: 1200px;
 }
 
-.div-1, .div-2, .div-3 {
+p span {
+    font-family: 'Lora', sans serif;
+}
+
+header, footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header h1 {
+    font-family: 'Lora', sans-serif;
+    font-size: 3em;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #fff;
+}
+
+main p {
+    font-size: 1.35em;
+}
+
+.flex-items {
   /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
   line-height: 1.5em;
-  font-size: 1.25em;
+  font-size: 1em;
   /* width: 30%; */
-  height: auto;
+  border-bottom: 1px solid #555;
 }
 
-.wrapper span {
-    font-family: 'Lora', sans serif;
-    font-size: 1.3em;
-    color: rgb(211, 132, 172);
+footer {
+    border-top: 1px solid #fff;
 }
 
+footer i {
+    padding: 30px 20px 0 0;
+}
 
 /* ==========================================================================
    Helper classes
@@ -217,14 +243,22 @@ body {
    Modify as content requires.
    ========================================================================== */
 
-@media all and (min-width: 1200px) {
-    .div-1, .div-2, .div-3 {
+   @media all and (max-width: 768px) {
+       body {
+           padding: 1em;
+       }
+   }
+
+   @media (min-width: 1200px) {
+    .flex-items {
         flex-basis: 30%;
+        border-bottom: none;
     }
 
-    .div-1, .div-2 {
+    #div-2 p {
+        border-left: 1px solid #555;
         border-right: 1px solid #555;
-        padding-right: 30px;
+        padding: 0 40px;
     }
 }
 
